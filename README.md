@@ -2,9 +2,9 @@
 Implementation of rank-1 inversion-free step to get topology sensitivity information for combinatorial topology optimization
 
 
-<img src="topoSens-minQ-results.png" height="300"/>
+<img src="topoSens-minQ-results.png" height="400" class="center"/>
 
-An example of the structure, current and cost function resulting from evaluation of START.m script.
+<em>An example of the structure, current and cost function resulting from evaluation of START.m script.</em>
 
 ## Implementation notes
 
@@ -24,6 +24,9 @@ It is advantageous to normalize fitness function traces with fundamental bounds.
 ## References
 
 [1] Capek, M., Jelinek, L., Kadlec, P., Gustafsson, M.: Optimal Inverse Design Based on Memetic Algorithm -- Part 1: Theory and Implementation, arXiv preprint, arXiv: xxxxx, pp. 1-12, 2022.
+
 [2] Capek, M., Jelinek, L., Kadlec, P., Gustafsson, M.: Optimal Inverse Design Based on Memetic Algorithm -- Part 2: Examples and Properties, arXiv preprint, arXiv: xxxxx, pp. 1-13, 2022.
+
 [3] Antenna Toolbox for MATLAB (AToM), [on-line]: www.antennatoolbox.com, (2022)
+
 [4] Fundamental Bounds Package (FunBo, AToM add-on), [on-line]: http://antennatoolbox.com/atom#addons (2022)
