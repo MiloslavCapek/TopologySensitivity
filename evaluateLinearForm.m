@@ -2,7 +2,7 @@ function P = evaluateLinearForm(A, I, globIndsBF, globIndsBFExtra)
 %% evaluateLinearForm: evaluate linear form (A*I) for all currents
 % 
 % Inputs:
-%   A               ~ matrix operator to be used for A*I
+%   A               ~ matrix to be used for A*I
 %   I               ~ current vectors (one or many, same but arbitrary
 %                     length)
 %   globIndsBF      ~ actual representation of structure (global positions)
@@ -22,7 +22,7 @@ if nInputs < 3 % for topo. sens. with edge removal, A, I have the same size
     P = A*I;
 elseif nInputs < 4 % for topo. sens. with edge removal, A has original size
     P = A(:, globIndsBF)*I;
-else % for topology senstivity with edge addition (can be accelerated?!?)
+else % for topology senstivity with edge addition
     B  = size(I, 2);
     N  = size(A, 2);
     I_ = zeros(N, B);
@@ -35,6 +35,6 @@ else % for topology senstivity with edge addition (can be accelerated?!?)
     I_(inds, :) = [];
     A(:, inds)  = [];
     
-    % evaluate (potentially reduced) quadratic form
+    % evaluate (potentially reduced) linear form
     P = A*I_;
 end

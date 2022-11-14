@@ -1,20 +1,20 @@
 function FF = ff_minQ(OP, I, globIndsBF, globIndsBF_tested, BFtype)
 %% ff_minQ: evaluates antenna Q factor
 % 
-% This function evaluates antenna Q factor without any penalty imposed for
+% This function evaluates antenna Q factor without any penalty imposed on
 % self-resonance, i.e.:
 % 
 %      FF = (max(omWM, omWE) ./ Pr),
 % 
 % where omWM is stored magnetic, omWE stored electric energies (both
-% multiplied by angular frequency, Pr is radiated power.
+% multiplied by angular frequency), Pr is radiated power.
 % 
 % Inputs:
 %   OP                ~ MATLAB structure containing all required 
-%                       information about the structure. Here, operators 
-%                       omXm, omXe, Z, and S are required. 
-%                       S is a factorization of radiation part of Z, i.e., 
-%                       S'*S = real(Z) for lossless structures.
+%                       information about the structure. Here, matrices 
+%                       omXm, omXe, Z, and S1 are required. 
+%                       S1 is a factorization of radiation part of Z, i.e., 
+%                       S1'*S1 = real(Z) for lossless structures.
 %   I                 ~ actual currents, matrix of arbitrarily many columns
 %   globIndsBF        ~ actual representation of structure (global positions)
 %   globIndsBF_tested ~ edges which are subject of evaluation (empty / a

@@ -1,5 +1,5 @@
 function thisGlobIndsBF = loc2glob(globIndsBF, thisLocIndsBF)
-%% loc2glob: recalculates local positions (indices) to local (those actually
+%% loc2glob: recalculates local positions (indices) to global (those actually
 %           used)
 % 
 % Inputs:

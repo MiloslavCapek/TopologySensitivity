@@ -1,8 +1,8 @@
 function P = evaluateQuadraticForm(A, I, globIndsBF, globIndsBFExtra)
-%% evaluateLinearForm: evaluate linear form (A*I) for all currents
+%% evaluateQuadraticForm: evaluate quadratic form (I'*A*I) for all currents
 % 
 % Inputs:
-%   A               ~ matrix operator to be used for I'*A*I
+%   A               ~ matrix to be used for I'*A*I
 %   I               ~ current vectors (one or many, same but arbitrary
 %                     length)
 %   globIndsBF      ~ actual representation of structure (global positions)
@@ -22,7 +22,7 @@ if nInputs < 3 % for topo. sens. with edge removal, A, I have the same size
     P = sum(dot(I, A*I), 1).';
 elseif nInputs < 4 % for topo. sens. with edge removal, A has original size
     P = sum(dot(I, A(globIndsBF, globIndsBF)*I), 1).';
-else % for topology senstivity with edge addition (can be accelerated?!?)
+else % for topology senstivity with edge addition
     B  = size(I, 2);
     N  = size(A, 2);
     I_ = zeros(N, B);

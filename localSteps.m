@@ -1,13 +1,13 @@
 function [FF, GenusInit, GenusFinal, GenusHistory, tt, candidates] = ...
     localSteps(OP, optData)
-%% localSteps: perform all local steps towards local minima, starting from 
-%              a random seed (if called multiple time, it is a Monte Carlo)
-%              Local step is performed in Greedy sense.
+%% localSteps: perform all local steps towards local minimum starting from 
+%              a random seed (if called multiple time, it results in a Monte 
+%              Carlo analysis). Each local step is performed in greedy sense.
 % 
 % Inputs:
 %   OP           ~ MATLAB structure containing all variables and fields
 %                  fully describing the optimization region and all
-%                  necessary operators. Majority of the fields are
+%                  necessary MoM matrices. Majority of the fields are
 %                  evaluated by AToM, see [1]. Mandatory fields are:
 %                  OP.Mesh (discretization), OP.BF (basis functions),
 %                  OP.ports (position of discrete ports, if any), OP.V
@@ -55,7 +55,7 @@ globIndsBF  = setdiff(1:OP.BF.nUnknowns, globIndsRem);
 % globIndsBF(protectedEdges) = true;
 % globIndsBF = find(globIndsBF);
 
-%% Run Greedy step from given point for topology significant edges only
+%% Run greedy step from given point for topology significant edges only
 t0 = tic;
 % Initial structure (admittance matrix)
 Y = inv(OP.Zsystem(globIndsBF,globIndsBF));
