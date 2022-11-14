@@ -15,7 +15,8 @@
 %
 % The method uses matrices stemming from method-of-moments solution to field 
 % integral equation. In this script, the precalculated matrices results from 
-% electric field integral equation.
+% electric field integral equation. Rao-Wilton-Glisson basis functions
+% are used as optimization degrees of freedom.
 % 
 % [1] Capek, M., Jelinek, L., Kadlec, P., Gustafsson, M.: Memetic Scheme 
 %     for Inverse Design Using an Exact Reanalysis of Method-of-Moments
